@@ -7,14 +7,13 @@ using OpenQA.Selenium;
 
 namespace AmazonTestCases.Models
 {
-    public static class Homepage
+    public static class Product
     {
-        public static string BaseUrl = @"https://www.amazon.com/";
 
-        public static string GetUrl()
+        public static void AddToCart(IWebDriver driver)
         {
-            return BaseUrl;
+            IWebElement button = driver.FindElement(By.XPath("//*[@id='add-to-cart-button']"));
+            button.Click();
         }
-
     }
 }
